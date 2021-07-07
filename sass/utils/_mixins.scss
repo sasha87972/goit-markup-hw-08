@@ -1,0 +1,19 @@
+@mixin font($fw, $fs, $lh, $ls, $clr) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  color: $clr;
+}
+@mixin font-normal($fs, $lh, $ls, $clr) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  color: $clr;
+}
+@mixin font-no-ls($fw, $fs, $lh, $clr) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $clr;
+}

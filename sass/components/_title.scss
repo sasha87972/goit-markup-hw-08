@@ -1,0 +1,10 @@
+.title {
+  @include font-no-ls(bold, 14px, 1.19, var(--black-text));
+  text-transform: uppercase;
+}
+.title_align_center {
+  text-align: center;
+}
+.title_color_white {
+  color: var(--white-text);
+}

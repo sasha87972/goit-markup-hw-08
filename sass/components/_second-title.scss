@@ -1,0 +1,5 @@
+.second-title {
+  @include font-no-ls(bold, 36px, 1.7, var(--black-text));
+  text-align: center;
+  margin-bottom: 50px;
+}

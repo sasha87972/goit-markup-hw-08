@@ -1,0 +1,14 @@
+.logo {
+  font-family: 'Raleway', sans-serif;
+  white-space: nowrap;
+  @include font-no-ls(bold, 24px, 1.17, var(--blue-clr));
+  @media screen and (min-width: 1200px) {
+    @include font-no-ls(bold, 26px, 1.19, var(--blue-clr));
+  }
+}
+.logo__part {
+  color: var(--black-logo);
+}
+.logo__part_color_white {
+  color: var(--white-text);
+}
