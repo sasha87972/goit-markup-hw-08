@@ -52,9 +52,7 @@
   height: 30px;
   border: 1px solid var(--close-btn);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex;
   padding: 0;
   background-color: var(--white-text);
   color: var(--black-logo);

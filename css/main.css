@@ -37,7 +37,7 @@
   overflow: hidden;
 }
 
-.button, .social__link, .mobile-menu__btn, .advantages__icon, .our-work-list__overlay, .clients__link {
+.button, .social__link, .mobile-menu__btn, .modal__button, .advantages__icon, .our-work-list__overlay, .clients__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -548,13 +548,14 @@ img {
 
 .mobile-menu__btn {
   position: absolute;
-  width: 40px;
-  height: 40px;
   right: 15px;
   top: 50%;
+  width: 40px;
+  height: 40px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   border: none;
+  cursor: pointer;
   color: var(--black-text);
   background-color: var(--white-text);
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -563,12 +564,6 @@ img {
 
 .mobile-menu__btn:hover, .mobile-menu__btn:focus {
   color: var(--blue-clr);
-}
-
-@media (min-width: 768px) {
-  .mobile-menu__btn {
-    display: none;
-  }
 }
 
 .mobile-menu__icon {
@@ -792,15 +787,6 @@ img {
   height: 30px;
   border: 1px solid var(--close-btn);
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 0;
   background-color: var(--white-text);
   color: var(--black-logo);
