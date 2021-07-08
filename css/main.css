@@ -566,6 +566,12 @@ img {
   color: var(--blue-clr);
 }
 
+@media (min-width: 768px) {
+  .mobile-menu__btn {
+    display: none;
+  }
+}
+
 .mobile-menu__icon {
   fill: currentColor;
 }

@@ -90,9 +90,9 @@
   &:focus {
     color: var(--blue-clr);
   }
-  // @media (min-width: 768px) {
-  //   display: none;
-  // }
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 .mobile-menu__icon {
   fill: currentColor;
