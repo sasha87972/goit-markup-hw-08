@@ -1,6 +1,7 @@
 .hero {
   min-width: 320px;
   padding: 118px 0;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   background-color: var(--dark-bgd);
@@ -60,15 +61,16 @@
 }
 .hero__container {
   text-align: center;
+  margin: 0 auto;
 }
 
 .hero__title {
   width: 360px;
+  margin: 0 auto;
   @include font(900, 26px, 1.62, 0.06em, var(--white-text));
   text-align: center;
   text-transform: uppercase;
-  margin: 0 auto;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     width: 700px;
     @include font(900, 44px, 1.36, 0.06em, var(--white-text));
   }

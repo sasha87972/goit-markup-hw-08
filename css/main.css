@@ -59,6 +59,7 @@
 
 .section {
   padding: 60px 0;
+  width: 100%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -69,7 +70,6 @@
 
 .container {
   min-width: 320px;
-  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -77,24 +77,18 @@
 @media screen and (min-width: 480px) {
   .container {
     width: 480px;
-    margin: 0 auto;
-    padding: 0 15px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
-    margin: 0 auto;
-    padding: 0 15px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
     width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
   }
 }
 
@@ -118,7 +112,8 @@ ul {
 
 img {
   display: block;
-  min-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .title {
@@ -138,12 +133,22 @@ img {
 }
 
 .second-title {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 1.7;
-  color: var(--black-text);
   text-align: center;
-  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1.18;
+  color: var(--black-text);
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+  .second-title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.7;
+    color: var(--black-text);
+    margin-bottom: 50px;
+  }
 }
 
 .logo {
@@ -639,6 +644,7 @@ img {
 .hero {
   min-width: 320px;
   padding: 118px 0;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -693,10 +699,12 @@ img {
 
 .hero__container {
   text-align: center;
+  margin: 0 auto;
 }
 
 .hero__title {
   width: 360px;
+  margin: 0 auto;
   font-weight: 900;
   font-size: 26px;
   line-height: 1.62;
@@ -704,10 +712,9 @@ img {
   color: var(--white-text);
   text-align: center;
   text-transform: uppercase;
-  margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .hero__title {
     width: 700px;
     font-weight: 900;
@@ -991,7 +998,9 @@ img {
 }
 
 .advantages__list {
-  margin-bottom: -30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -1001,7 +1010,8 @@ img {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-left: -30px;
+    margin-left: calc(-1 * var(--project-gap));
+    margin-top: calc(-1 * var(--project-gap));
   }
 }
 
@@ -1014,21 +1024,33 @@ img {
 
 .advantages__item {
   width: 100%;
-  margin-bottom: 30px;
+  height: 244px;
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
   .advantages__item {
-    -ms-flex-preferred-size: calc((100% - 60px) / 2);
-        flex-basis: calc((100% - 60px) / 2);
-    margin-left: 30px;
+    -ms-flex-preferred-size: calc(100% / 2 - var(--project-gap));
+        flex-basis: calc(100% / 2 - var(--project-gap));
+    margin-left: var(--project-gap);
+    margin-top: var(--project-gap);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .advantages__item {
-    -ms-flex-preferred-size: calc((100%-120px) / 4);
-        flex-basis: calc((100%-120px) / 4);
+    -ms-flex-preferred-size: calc(100% / 4 - var(--project-gap));
+        flex-basis: calc(100% / 4 - var(--project-gap));
+  }
+}
+
+.advantages__item:not(:last-child) {
+  margin-bottom: var(--project-gap);
+}
+
+@media screen and (min-width: 768px) {
+  .advantages__item:not(:last-child) {
+    margin-bottom: 0;
   }
 }
 
@@ -1084,8 +1106,10 @@ img {
 }
 
 .team__list {
-  margin-bottom: -30px;
-  margin-top: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: var(--project-gap);
 }
 
 @media screen and (min-width: 768px) {
@@ -1095,21 +1119,21 @@ img {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-left: -30px;
+    margin-left: calc(-1 * var(--project-gap));
+    margin-top: calc(-1 * var(--project-gap));
   }
 }
 
 @media screen and (min-width: 1200px) {
   .team__list {
-    margin-top: 50px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
 }
 
 .team__item {
+  display: block;
   width: 100%;
-  margin-bottom: 30px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px var(--shadow-layer);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px var(--shadow-layer);
   background-color: var(--white-text);
@@ -1117,40 +1141,33 @@ img {
 
 @media screen and (min-width: 768px) {
   .team__item {
-    -ms-flex-preferred-size: calc((100% - 60px) / 2);
-        flex-basis: calc((100% - 60px) / 2);
-    margin-left: 30px;
+    display: inline-block;
+    -ms-flex-preferred-size: calc(100% / 2 - var(--project-gap));
+        flex-basis: calc(100% / 2 - var(--project-gap));
+    margin-left: var(--project-gap);
+    margin-top: var(--project-gap);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .team__item {
-    -ms-flex-preferred-size: calc((100% - 120px) / 4);
-        flex-basis: calc((100% - 120px) / 4);
-    margin-top: 50px;
+    -ms-flex-preferred-size: calc(100% / 3 - var(--project-gap));
+        flex-basis: calc(100% / 3 - var(--project-gap));
+  }
+}
+
+.team__item:not(:last-child) {
+  margin-bottom: var(--project-gap);
+}
+
+@media screen and (min-width: 768px) {
+  .team__item:not(:last-child) {
+    margin-bottom: 0;
   }
 }
 
 .team__photo {
   width: 100%;
-}
-
-@media screen and (min-width: 480px) {
-  .team__photo {
-    width: 450px;
-  }
-}
-
-@media screen and (min-width: 480px) {
-  .team__photo {
-    width: 354px;
-  }
-}
-
-@media screen and (min-width: 480px) {
-  .team__photo {
-    width: 270px;
-  }
 }
 
 .team__box {
@@ -1170,44 +1187,45 @@ img {
 }
 
 .clients__list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 30px;
-  margin-bottom: -30px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: -30px;
+  margin-left: calc(-1 * var(--project-gap));
+  margin-top: calc(-1 * var(--project-gap));
 }
 
 @media screen and (min-width: 1200px) {
   .clients__list {
-    margin-top: 50px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
 }
 
 .clients__item {
+  display: inline-block;
   width: 100%;
-  margin-bottom: 30px;
-  -ms-flex-preferred-size: calc((100% - 60px) / 2);
-      flex-basis: calc((100% - 60px) / 2);
-  margin-left: 30px;
+  -ms-flex-preferred-size: calc(100% / 2 - var(--project-gap));
+      flex-basis: calc(100% / 2 - var(--project-gap));
+  margin-left: var(--project-gap);
+  margin-top: var(--project-gap);
 }
 
 @media screen and (min-width: 768px) {
   .clients__item {
-    -ms-flex-preferred-size: calc((100% - 90px) / 3);
-        flex-basis: calc((100% - 90px) / 3);
-    margin-left: 30px;
+    -ms-flex-preferred-size: calc(100% / 3 - var(--project-gap));
+        flex-basis: calc(100% / 3 - var(--project-gap));
   }
 }
 
 @media screen and (min-width: 1200px) {
   .clients__item {
-    -ms-flex-preferred-size: calc((100% - 120px) / 4);
-        flex-basis: calc((100% - 120px) / 4);
+    -ms-flex-preferred-size: calc(100% / 6 - var(--project-gap));
+        flex-basis: calc(100% / 6 - var(--project-gap));
   }
 }
 
@@ -1260,6 +1278,9 @@ img {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
 }
 
@@ -1279,8 +1300,9 @@ img {
 }
 
 .footer__links {
+  display: inline-block;
   text-align: center;
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1288,6 +1310,7 @@ img {
     width: 230px;
     text-align: left;
     margin-right: 70px;
+    margin-bottom: 0;
   }
 }
 
@@ -1295,19 +1318,23 @@ img {
 .sign-up__title {
   display: block;
   text-align: center;
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   color: var(--white-text);
-  padding-top: 12px;
   text-transform: uppercase;
 }
 
 .footer__social {
-  width: 100%;
-  margin-top: 20px;
-  padding-bottom: 60px;
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__social {
+    margin-bottom: 0;
+  }
 }
 
 .sign-up__form {
@@ -1344,7 +1371,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1365,7 +1391,7 @@ img {
   display: block;
   margin-bottom: 20px;
   min-width: 290px;
-  width: 100%;
+  max-width: 358px;
   padding: 15px 16px;
   border: 1px solid var(--footer-form-border);
   -webkit-filter: drop-shadow(0px 4px 4px var(--shadow));
@@ -1450,13 +1476,13 @@ img {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .filter__list {
-    margin: 0 auto 50px;
+    margin-bottom: 50px;
   }
 }
 
@@ -1472,8 +1498,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 @media screen and (min-width: 768px) {
@@ -1483,7 +1507,7 @@ img {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-left: calc(-2 * var(--project-gap));
+    margin-left: calc(-1 * var(--project-gap));
     margin-top: calc(-1 * var(--project-gap));
   }
 }
@@ -1491,11 +1515,11 @@ img {
 .projects__item {
   display: inline-block;
   width: 100%;
+  height: 378px;
 }
 
 @media screen and (min-width: 768px) {
   .projects__item {
-    width: 354px;
     -ms-flex-preferred-size: calc(100% / 2 - var(--project-gap));
         flex-basis: calc(100% / 2 - var(--project-gap));
     margin-left: var(--project-gap);
@@ -1507,6 +1531,16 @@ img {
   .projects__item {
     -ms-flex-preferred-size: calc(100% / 3 - var(--project-gap));
         flex-basis: calc(100% / 3 - var(--project-gap));
+  }
+}
+
+.projects__item:not(:last-child) {
+  margin-bottom: var(--project-gap);
+}
+
+@media screen and (min-width: 768px) {
+  .projects__item:not(:last-child) {
+    margin-bottom: 0;
   }
 }
 
