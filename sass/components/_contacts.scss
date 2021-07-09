@@ -38,7 +38,9 @@
     margin-bottom: 10px;
   }
 }
-.contacts__link {
+.links .contacts__link {
+  display: flex;
+  flex-direction: row;
   font-size: 12px;
   line-height: 1.67;
   white-space: nowrap;
@@ -70,7 +72,7 @@
     color: var(--blue-clr);
   }
 }
-.contacts__link_color_white {
+.links .contacts__link_color_white {
   color: var(--white-text);
 }
 

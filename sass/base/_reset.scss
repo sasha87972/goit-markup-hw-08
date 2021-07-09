@@ -1,6 +1,8 @@
 .links a {
   text-decoration: none;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 ul,
 h1,
