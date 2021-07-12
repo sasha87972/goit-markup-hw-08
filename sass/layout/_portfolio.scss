@@ -2,7 +2,8 @@
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
-  margin: -15px auto 40px;
+  margin: 0 auto 40px;
+
   @media screen and (min-width: 768px) {
     justify-content: center;
     margin-bottom: 30px;
@@ -12,9 +13,13 @@
   }
 }
 .filter__item {
-  margin-top: 15px;
   &:not(:last-child) {
     margin-right: 8px;
+  }
+  @media screen and (max-width: 768px) {
+    &:nth-child(n + 4) {
+      margin-top: 15px;
+    }
   }
 }
 
